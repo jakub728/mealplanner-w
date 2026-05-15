@@ -28,6 +28,14 @@ function RootComponent() {
         >
           Polityka prywatnośći
         </Link>
+        <Link
+          to="/terms"
+          activeProps={{
+            className: "font-bold",
+          }}
+        >
+          Regulamin
+        </Link>
       </div>
       <hr />
       <Outlet />

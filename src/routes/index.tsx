@@ -1,6 +1,7 @@
 import * as React from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import onionLogo from "../assets/Onion-MealPlanner-icon.png";
+import gPlayImg from "../assets/g_play.png";
 
 export const Route = createFileRoute("/")({
   component: HomeComponent,
@@ -8,73 +9,137 @@ export const Route = createFileRoute("/")({
 
 function HomeComponent() {
   return (
-    <div className="max-w-5xl mx-auto p-6 space-y-12">
-      <header className="text-center space-y-4">
-        <div className="flex flex-col justify-center items-center">
-          <img
-            src={onionLogo}
-            alt="Logo Onion Meals"
-            className="w-20 h-20 object-contain shadow-amber-200/50 drop-shadow-xl"
-          />
-          <h1 className="text-5xl font-black text-amber-900 dark:text-amber-500 tracking-tight">
-            Onion Meals
-          </h1>
-        </div>
-        <p className="text-xl text-stone-600 dark:text-stone-700 max-w-2xl mx-auto leading-relaxed">
-          Twój osobisty asystent kuchenny. Planuj, gotuj i dziel się przepisami
-          – wszystko w jednym miejscu, bez płaczu (chyba że przy krojeniu
-          cebuli)
-        </p>
-      </header>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <section className="p-6 bg-amber-50 dark:bg-amber-900/20 rounded-3xl shadow-sm border border-amber-100 dark:border-amber-900/30 flex flex-col items-center text-center">
-          <div className="text-3xl mb-4">📖</div>
-          <h3 className="text-xl font-bold mb-2">Własne Przepisy</h3>
-          <p className="text-stone-600 dark:text-stone-700 text-sm">
-            Dodawaj swoje sekretne receptury. Masz pełną kontrolę nad
-            składnikami i krokami przygotowania.
+    <div className="min-h-screen bg-white dark:bg-zinc-950 font-sans">
+      <div className="max-w-6xl mx-auto p-6 space-y-20">
+        {/* HERO SECTION */}
+        <header className="text-center space-y-8 pt-10">
+          <div className="flex flex-col justify-center items-center">
+            <div className="relative">
+              <div className="absolute inset-0 bg-amber-400 blur-3xl opacity-20 rounded-full"></div>
+              <img
+                src={onionLogo}
+                alt="Logo Onion Meals"
+                className="w-28 h-28 object-contain drop-shadow-2xl relative z-10"
+              />
+            </div>
+            <h1 className="mt-6 text-6xl font-black text-zinc-900 dark:text-white tracking-tighter">
+              Onion<span className="text-[#ffee00]">Meals</span>
+            </h1>
+          </div>
+          <p className="text-2xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto leading-relaxed">
+            Twój osobisty asystent kuchenny. Planuj, gotuj i dziel się
+            przepisami – bez płaczu (chyba że przy krojeniu cebuli).
           </p>
-        </section>
-
-        <section className="p-6 bg-amber-50 dark:bg-amber-900/20 rounded-3xl shadow-sm border border-amber-100 dark:border-amber-900/30 flex flex-col items-center text-center">
-          <div className="text-3xl mb-4">🌍</div>
-          <h3 className="text-xl font-bold mb-2">Baza Społeczności</h3>
-          <p className="text-stone-600 dark:text-stone-700 text-sm">
-            Udostępniaj swoje dania innym użytkownikom i odkrywaj inspiracje z
-            całego świata.
-          </p>
-        </section>
-
-        <section className="p-6 bg-amber-50 dark:bg-amber-900/20 rounded-3xl shadow-sm border border-amber-100 dark:border-amber-900/30 flex flex-col items-center text-center">
-          <div className="text-3xl mb-4">📅</div>
-          <h3 className="text-xl font-bold mb-2">Inteligentny Kalendarz</h3>
-          <p className="text-stone-600 dark:text-stone-700 text-sm">
-            Planuj posiłki na cały tydzień.
-            <span className="block mt-2 font-semibold text-amber-700 dark:text-amber-700">
-              Śniadanie • Lunch • Obiad • Podwieczorek • Kolacja
+          <p className="text-2xl text-zinc-600 dark:text-zinc-400 max-w-3xl mx-auto leading-relaxed">
+            <span className="text-zinc-900 dark:text-zinc-100 font-semibold italic">
+              Manage and Cook - Twoja kuchnia, Twoje zasady
             </span>
           </p>
-        </section>
 
-        <section className="p-6 bg-amber-50 dark:bg-amber-900/20 rounded-3xl shadow-sm border border-amber-100 dark:border-amber-900/30 flex flex-col items-center text-center">
-          <div className="text-3xl mb-4">🛒</div>
-          <h3 className="text-xl font-bold mb-2">Lista Zakupów</h3>
-          <p className="text-stone-600 dark:text-stone-700 text-sm">
-            Jednym kliknięciem generuj listę zakupów na podstawie zaplanowanych
-            posiłków.
-          </p>
-        </section>
+          <div className="flex flex-wrap justify-center gap-4 pt-6">
+            {/* Przycisk Google Play */}
+            <button className="flex items-center justify-center gap-3 px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 rounded-2xl font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-lg shadow-zinc-200 dark:shadow-none">
+              <img
+                src={gPlayImg}
+                alt="Google Play"
+                className="w-6 h-6 object-contain"
+              />
+              <span>Pobierz z Google Play</span>
+            </button>
 
-        <section className="p-6 bg-amber-50 dark:bg-amber-900/20 rounded-3xl shadow-sm border border-amber-100 dark:border-amber-900/30 flex flex-col items-center text-center lg:col-span-2 lg:max-w-2xl lg:mx-auto w-full">
-          <div className="text-3xl mb-4">🎨</div>
-          <h3 className="text-xl font-bold mb-2">Personalizacja</h3>
-          <p className="text-stone-600 dark:text-stone-700 text-sm">
-            Dostosuj wygląd aplikacji do swoich preferencji (zmiana kolorów i
-            tryb ciemny).
-          </p>
-        </section>
+            {/* Przycisk Dowiedz się więcej */}
+            <Link
+              to="/privacy"
+              className="flex items-center justify-center px-8 py-4 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white border border-zinc-200 dark:border-zinc-700 rounded-2xl font-bold text-lg hover:bg-zinc-50 dark:hover:bg-zinc-700 transition-all"
+            >
+              Dowiedz się więcej
+            </Link>
+          </div>
+        </header>
+
+        {/* FEATURES GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <FeatureCard
+            emoji="📖"
+            title="Własne Przepisy"
+            desc="Dodawaj swoje sekretne receptury. Masz pełną kontrolę nad składnikami i krokami przygotowania."
+          />
+          <FeatureCard
+            emoji="🌍"
+            title="Baza Społeczności"
+            desc="Udostępniaj swoje dania innym użytkownikom i odkrywaj inspiracje z całego świata."
+          />
+          <FeatureCard
+            emoji="📅"
+            title="Inteligentny Kalendarz"
+            desc="Planuj posiłki na cały tydzień. Śniadanie, Lunch, Obiad i wiele więcej."
+          />
+          <FeatureCard
+            emoji="🛒"
+            title="Lista Zakupów"
+            desc="Jednym kliknięciem generuj listę zakupów na podstawie zaplanowanych posiłków."
+          />
+          <FeatureCard
+            emoji="🎨"
+            title="Personalizacja"
+            desc="Dostosuj wygląd aplikacji do swoich preferencji – zmiana kolorów i tryb ciemny."
+          />
+          <FeatureCard
+            emoji="🔒"
+            title="Bezpieczeństwo"
+            desc="Twoje dane są u nas bezpieczne. Logowanie biometryczne i pełna kontrola nad kontem."
+          />
+        </div>
+
+        {/* FOOTER - TUTAJ SĄ WYMAGANE LINKI */}
+        <footer className="border-t border-zinc-100 dark:border-zinc-800 pt-10 pb-16">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-zinc-500 text-sm">
+              © 2026 Onion Meals. Twoja kuchnia, Twoje zasady.
+            </div>
+            <nav className="flex flex-wrap justify-center gap-8 text-sm font-medium">
+              <Link
+                to="/privacy"
+                className="text-zinc-600 dark:text-zinc-400 hover:text-[#ffee00]"
+              >
+                Polityka Prywatności
+              </Link>
+              <Link
+                to="/terms"
+                className="text-zinc-600 dark:text-zinc-400 hover:text-[#ffee00]"
+              >
+                Regulamin
+              </Link>
+              <a
+                href="mailto:kuba@satkurier.pl?subject=Usuwanie konta Onion Meals"
+                className="text-red-500 hover:text-red-600 font-bold"
+              >
+                Usuń konto i dane
+              </a>
+            </nav>
+          </div>
+        </footer>
       </div>
     </div>
+  );
+}
+
+function FeatureCard({
+  emoji,
+  title,
+  desc,
+}: {
+  emoji: string;
+  title: string;
+  desc: string;
+}) {
+  return (
+    <section className="p-8 bg-zinc-50 dark:bg-zinc-900 rounded-[2rem] border border-zinc-100 dark:border-zinc-800 transition-all hover:shadow-xl hover:shadow-amber-500/5">
+      <div className="text-4xl mb-6">{emoji}</div>
+      <h3 className="text-xl font-bold mb-3 dark:text-white">{title}</h3>
+      <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+        {desc}
+      </p>
+    </section>
   );
 }
