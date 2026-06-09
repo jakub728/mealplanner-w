@@ -38,7 +38,12 @@ function HomeComponent() {
 
           <div className="flex flex-wrap justify-center gap-4 pt-6">
             {/* Przycisk Google Play */}
-            <button className="flex items-center justify-center gap-3 px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 rounded-2xl font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-lg shadow-zinc-200 dark:shadow-none">
+            <button
+              className="flex items-center justify-center gap-3 px-8 py-4 bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 rounded-2xl font-bold text-lg hover:scale-105 active:scale-95 transition-all shadow-lg shadow-zinc-200 dark:shadow-none"
+              onClick={() =>
+                window.open("https://groups.google.com/g/onion-meals", "_blank")
+              }
+            >
               <img
                 src={gPlayImg}
                 alt="Google Play"
